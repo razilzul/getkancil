@@ -1,0 +1,123 @@
+/* Kancil landing site — brand system from docs/BRAND.md */
+:root {
+  --green: #91C83F;
+  --green-dark: #71AD33;
+  --green-deep: #557F26;
+  --gold: #F7B31B;
+  --orange: #EC892A;
+  --teal: #28AA93;
+  --purple: #9262BB;
+  --blue: #1C98EE;
+  --pink: #F26490;
+  --ink: #4A2E17;
+  --ink-soft: #7d7264;
+  --brown: #5E331C;
+  --bg: #FFF9EE;
+  --bg-wash: #F3F8E6;
+  --card: #FFFFFF;
+  --line: #E7DFCB;
+  --radius: 22px;
+  --shadow: 0 6px 18px rgba(94, 51, 28, 0.10);
+}
+
+* { box-sizing: border-box; }
+
+html { -webkit-text-size-adjust: 100%; }
+
+body {
+  margin: 0;
+  font-family: 'Baloo 2', 'Segoe UI Rounded', 'SF Pro Rounded', system-ui, -apple-system, sans-serif;
+  color: var(--ink);
+  background: var(--bg);
+  line-height: 1.55;
+}
+
+.wrap { max-width: 760px; margin: 0 auto; padding: 0 20px; }
+
+/* ── top nav ── */
+.nav {
+  display: flex; align-items: center; gap: 10px;
+  padding: 16px 20px; max-width: 760px; margin: 0 auto;
+}
+.nav img { width: 34px; height: 34px; border-radius: 9px; }
+.nav .brand { font-weight: 800; font-size: 20px; color: var(--ink); text-decoration: none; }
+.nav .spacer { flex: 1; }
+.nav a.link { color: var(--ink-soft); text-decoration: none; font-weight: 600; font-size: 15px; margin-left: 16px; }
+.nav a.link:hover { color: var(--green-deep); }
+
+/* ── hero ── */
+.hero {
+  text-align: center;
+  padding: 24px 20px 40px;
+  background: linear-gradient(180deg, var(--bg) 0%, var(--bg-wash) 100%);
+}
+.hero img.mascot { width: 200px; height: 200px; margin-bottom: 4px; }
+.hero h1 {
+  font-size: clamp(34px, 8vw, 54px);
+  margin: 0;
+  letter-spacing: -0.5px;
+}
+.hero .wm-k { color: var(--green); } .hero .wm-a { color: var(--gold); }
+.hero .wm-n { color: var(--purple); } .hero .wm-c { color: var(--teal); }
+.hero .wm-i { color: var(--pink); } .hero .wm-l { color: var(--blue); }
+.hero .tagline { font-size: clamp(20px, 4.5vw, 28px); font-weight: 800; color: var(--green-deep); margin: 6px 0 2px; }
+.hero .sub { font-size: 17px; color: var(--ink-soft); max-width: 30em; margin: 8px auto 0; font-weight: 500; }
+
+/* ── store buttons ── */
+.stores { display: flex; gap: 12px; justify-content: center; flex-wrap: wrap; margin-top: 24px; }
+.store-btn {
+  display: inline-flex; align-items: center; gap: 10px;
+  background: var(--ink); color: #fff; text-decoration: none;
+  padding: 12px 20px; border-radius: 14px; font-weight: 700; font-size: 15px;
+  box-shadow: var(--shadow);
+}
+.store-btn small { display: block; font-size: 11px; font-weight: 500; opacity: .8; }
+.store-btn.soon { background: #C9BFAD; cursor: default; }
+
+/* ── sections ── */
+section.block { padding: 40px 0; }
+section.block h2 { font-size: 28px; text-align: center; margin: 0 0 8px; }
+section.block .lede { text-align: center; color: var(--ink-soft); max-width: 34em; margin: 0 auto 28px; font-weight: 500; }
+
+.cards { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 16px; }
+.card {
+  background: var(--card); border: 2.5px solid var(--line);
+  border-radius: var(--radius); padding: 22px; box-shadow: var(--shadow);
+}
+.card .emoji { font-size: 30px; }
+.card h3 { margin: 10px 0 6px; font-size: 19px; }
+.card p { margin: 0; color: var(--ink-soft); font-size: 15px; font-weight: 500; }
+
+.band { background: var(--bg-wash); }
+
+/* ── legal / content pages ── */
+.doc { padding: 8px 0 60px; }
+.doc h1 { font-size: 34px; margin: 24px 0 4px; }
+.doc .eff { color: var(--ink-soft); font-weight: 600; margin: 0 0 24px; }
+.doc h2 { font-size: 22px; margin: 30px 0 8px; color: var(--green-deep); }
+.doc h3 { font-size: 18px; margin: 20px 0 6px; }
+.doc p, .doc li { font-size: 16px; color: #3f3527; }
+.doc a { color: var(--green-deep); }
+.doc .short {
+  background: var(--card); border: 2.5px solid var(--green);
+  border-radius: var(--radius); padding: 18px 22px; box-shadow: var(--shadow); margin: 8px 0 20px;
+}
+.faq { margin: 8px 0 20px; }
+.faq details {
+  background: var(--card); border: 2.5px solid var(--line); border-radius: 16px;
+  padding: 4px 18px; margin-bottom: 12px;
+}
+.faq summary { font-weight: 700; font-size: 17px; cursor: pointer; padding: 12px 0; list-style: none; }
+.faq summary::-webkit-details-marker { display: none; }
+.faq summary::after { content: '＋'; float: right; color: var(--green); }
+.faq details[open] summary::after { content: '－'; }
+.faq details p { margin: 0 0 14px; color: var(--ink-soft); font-weight: 500; }
+
+/* ── footer ── */
+footer {
+  background: var(--green-deep); color: #EAF6D2; text-align: center;
+  padding: 34px 20px; margin-top: 20px;
+}
+footer a { color: #fff; text-decoration: none; font-weight: 700; margin: 0 10px; }
+footer a:hover { text-decoration: underline; }
+footer .fine { color: #C6E39A; font-size: 13px; font-weight: 500; margin-top: 14px; }
