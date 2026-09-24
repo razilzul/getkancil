@@ -1,0 +1,255 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Kancil — Malay learning that feels like a game</title>
+<meta name="description" content="A Malay learning game for primary-school kids in Singapore, Malaysia and Brunei. Help Sang Kancil outsmart Sang Buaya. Free to start on the App Store and Google Play. No ads.">
+<meta property="og:title" content="Kancil — Battle the boss. Jadi jaguh Bahasa!">
+<meta property="og:description" content="A Malay learning game for primary-school kids. Free to start on the App Store and Google Play. No ads, no account.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://getkancil.app/">
+<meta property="og:image" content="https://getkancil.app/assets/og.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://getkancil.app/assets/og.png">
+<link rel="icon" href="/assets/icon.png">
+<link rel="icon" href="/assets/icon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@600;700;800&family=Lexend:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+/* "Jejak": the app's lesson trail becomes the page. Calm, parent-facing, matches the 2026 store screenshots. */
+:root{
+  --paper:#FDF3DC; --wash:#E4EECF; --wash-2:#D3E4B6;
+  --forest:#1F4D34; --leaf:#8EC44E; --leaf-dark:#5E8F2B;
+  --gold:#F7B31B; --bark:#5E331C; --ink:#3A3A2C; --ink-soft:#6A6653;
+}
+*{box-sizing:border-box;margin:0}
+body{font-family:Lexend,system-ui,sans-serif;color:var(--ink);background:var(--paper);line-height:1.6;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+img{display:block;max-width:100%}
+a:focus-visible{outline:3px solid var(--leaf-dark);outline-offset:3px;border-radius:10px}
+h1,h2,h3{font-family:'Baloo 2',system-ui,sans-serif;font-weight:800;color:var(--forest);line-height:1}
+
+nav{display:flex;align-items:center;gap:26px;max-width:1160px;margin:0 auto;padding:18px 28px}
+nav img{height:56px}
+nav .sp{flex:1}
+nav a{color:var(--ink-soft);text-decoration:none;font-size:15px;font-weight:500}
+nav a:hover{color:var(--forest)}
+nav .get{color:#fff;background:var(--forest);font-family:'Baloo 2';font-weight:800;font-size:17px;padding:8px 20px;border-radius:999px}
+
+.hero{max-width:1160px;margin:0 auto;padding:40px 28px 40px;display:grid;grid-template-columns:1.25fr 1fr;gap:40px;align-items:center;position:relative}
+.hero:before{content:"";position:absolute;width:760px;height:760px;border-radius:50%;background:var(--wash);right:-260px;top:-80px;z-index:-1}
+.hero h1{font-size:clamp(50px,7vw,100px);letter-spacing:-.015em;line-height:.93}
+.hero p{font-size:20px;color:var(--ink-soft);max-width:26em;margin-top:24px}
+.hero p b{color:var(--forest);font-weight:600}
+.stores{display:flex;gap:12px;flex-wrap:wrap;margin-top:30px}
+.badge{display:inline-flex;align-items:center;gap:10px;background:#000;color:#fff;text-decoration:none;border-radius:12px;padding:9px 18px 9px 14px;min-width:170px}
+.badge svg{width:26px;height:26px;flex:none}
+.badge small{display:block;font-size:11px;line-height:1.1;opacity:.85}
+.badge b{display:block;font-family:-apple-system,'Segoe UI',system-ui,sans-serif;font-size:20px;line-height:1.1;font-weight:600}
+.note{font-size:14px;color:var(--ink-soft);margin-top:12px}
+.shot{position:relative;justify-self:center;width:min(380px,100%)}
+.shot .frame{border-radius:40px;overflow:hidden;box-shadow:0 30px 60px rgba(31,77,52,.22),0 0 0 10px #fff}
+.shot .sticker{position:absolute;filter:drop-shadow(0 8px 12px rgba(94,51,28,.2))}
+.shot .s1{width:120px;left:-80px;top:40%}
+.shot .s2{width:110px;right:-60px;top:6%;transform:rotate(12deg)}
+.shot .s3{width:150px;right:-70px;bottom:-30px}
+
+/* the trail */
+.trail{position:relative;max-width:1060px;margin:60px auto 0;padding:40px 28px 40px}
+.trail>h2{font-size:clamp(34px,4vw,50px);text-align:center;max-width:16em;margin:0 auto}
+.trail>.sub{text-align:center;color:var(--ink-soft);max-width:34em;margin:14px auto 0;font-size:17px}
+.path{position:absolute;inset:0;width:100%;height:100%;pointer-events:none;overflow:visible}
+.path .base{fill:none;stroke:#E2D3AE;stroke-width:14;stroke-linecap:round;stroke-dasharray:1 26}
+.path .done{fill:none;stroke:var(--gold);stroke-width:14;stroke-linecap:round;stroke-dasharray:1 26}
+.stop{display:grid;grid-template-columns:1fr 150px 1fr;align-items:center;gap:40px;margin-top:90px;position:relative}
+.stop .node{width:150px;height:150px;border-radius:50%;background:#fff;display:grid;place-items:center;box-shadow:0 10px 0 var(--wash-2),0 0 0 8px var(--wash);position:relative;z-index:2}
+.stop .node img{width:96px}
+.stop .txt h3{font-size:34px}
+.stop .txt h3 small{display:block;font-family:Lexend;font-weight:500;font-size:16px;color:var(--leaf-dark);margin-top:8px}
+.stop .txt p{color:var(--ink-soft);margin-top:12px;max-width:24em;font-size:16.5px}
+.stop .pic{border-radius:28px;overflow:hidden;box-shadow:0 18px 36px rgba(31,77,52,.16),0 0 0 7px #fff;max-width:330px;aspect-ratio:4/4.4}
+.stop .pic img{width:100%;height:100%;object-fit:cover;object-position:top}
+.stop:nth-of-type(odd) .txt{order:3}
+.stop:nth-of-type(odd) .pic{order:1;justify-self:end}
+.stop .node{order:2}
+.stop:nth-of-type(even) .pic{order:3}
+.stop:nth-of-type(even) .txt{order:1;text-align:right;justify-self:end}
+.stop:nth-of-type(even) .txt p{margin-left:auto}
+
+/* parents */
+.parents{background:var(--wash);margin-top:110px;padding:90px 28px;border-radius:60px 60px 0 0}
+.parents .in{max-width:1060px;margin:0 auto}
+.parents h2{font-size:clamp(34px,4vw,52px);max-width:15em}
+.parents .lede{color:var(--ink-soft);font-size:18px;max-width:34em;margin-top:16px}
+.deal{margin-top:44px;background:#fff;border-radius:36px;padding:34px 40px;display:grid;grid-template-columns:auto auto auto 1fr;gap:26px;align-items:center;box-shadow:0 10px 0 var(--wash-2)}
+.deal .eq{display:flex;align-items:center;gap:14px;font-family:'Baloo 2';font-weight:800;color:var(--forest);font-size:36px;line-height:1}
+.deal .eq img{width:74px}
+.deal .eq span small{display:block;font-family:Lexend;font-weight:500;font-size:13px;color:var(--ink-soft)}
+.deal .eqs{font-family:'Baloo 2';font-weight:800;font-size:44px;color:var(--gold)}
+.deal .expl{color:var(--ink-soft);font-size:15.5px;border-left:3px solid var(--wash);padding-left:26px}
+.pillars{display:grid;grid-template-columns:repeat(3,1fr);gap:40px;margin-top:60px}
+.pillars img{width:78px;margin-bottom:12px}
+.pillars h3{font-size:24px}
+.pillars p{color:var(--ink-soft);font-size:15.5px;margin-top:8px}
+
+.cta{background:var(--forest);color:#E8F0DE;padding:80px 28px;position:relative;overflow:hidden}
+.cta .in{max-width:1060px;margin:0 auto;display:grid;grid-template-columns:1fr auto;gap:40px;align-items:center}
+.cta h2{color:#fff;font-size:clamp(36px,4.5vw,58px)}
+.cta p{margin-top:14px;max-width:32em;font-size:17px;color:#C9D8C0}
+.cta .run{width:230px;transform:scaleX(-1)}
+.cta .stores .badge{box-shadow:0 0 0 1.5px #5D7D69}
+footer{background:var(--forest);border-top:1px solid #2F6247;color:#A7BCA6;padding:26px 28px;font-size:14px}
+footer .in{max-width:1060px;margin:0 auto;display:flex;gap:22px;flex-wrap:wrap;align-items:center}
+footer a{color:#fff;text-decoration:none}
+footer .sp{flex:1}
+
+@media (max-width:860px){
+  nav a:not(.get){display:none} nav .sp{flex:1}
+  .hero{grid-template-columns:1fr;padding-top:10px}
+  .hero:before{width:520px;height:520px;right:-240px;top:320px}
+  .shot{width:280px;margin-top:20px}
+  .shot .s1{width:84px;left:-50px}.shot .s2{width:80px;right:-40px}.shot .s3{width:110px;right:-50px}
+  .stop{grid-template-columns:90px 1fr;gap:18px 20px;margin-top:60px}
+  .stop .node{width:90px;height:90px;order:1!important;grid-row:span 2;align-self:start}
+  .stop .node img{width:58px}
+  .stop .txt{order:2!important;text-align:left!important;justify-self:start!important}
+  .stop .txt p{margin-left:0!important}
+  .stop .pic{order:3!important;grid-column:2;justify-self:start!important;max-width:240px}
+  .stop .txt h3{font-size:28px}
+  .deal{grid-template-columns:1fr;padding:28px;text-align:center;justify-items:center}
+  .deal .expl{border:0;padding:0}
+  .pillars{grid-template-columns:1fr;gap:30px}
+  .cta .in{grid-template-columns:1fr}
+  .cta .run{width:150px}
+}
+@media (prefers-reduced-motion:reduce){.path .done{display:none}}
+</style>
+</head>
+<body>
+
+<nav>
+  <img src="/assets/img/logo-t.webp" alt="Kancil">
+  <span class="sp"></span>
+  <a href="#trail">How it works</a>
+  <a href="#parents">For parents</a>
+  <a href="/support/">Support</a>
+  <a class="get" href="#get">Get Kancil</a>
+</nav>
+
+<header class="hero">
+  <div>
+    <h1>A little Malay. A new word today.</h1>
+    <p>Kancil is a Malay learning game for primary-school kids in Singapore, Malaysia and Brunei. <b>Five minutes a day</b>, with native audio, stories and a boss to beat.</p>
+    <div class="stores" id="get">
+      <a class="badge" href="https://apps.apple.com/sg/app/id6789944706"><svg viewBox="0 0 24 24" fill="#fff"><path d="M16.4 12.6c0-2.4 2-3.6 2.1-3.6-1.1-1.7-2.9-1.9-3.5-1.9-1.5-.2-2.9.9-3.7.9-.8 0-1.9-.9-3.2-.8-1.6 0-3.1 1-4 2.4-1.7 3-.4 7.4 1.2 9.8.8 1.2 1.8 2.5 3 2.4 1.2 0 1.7-.8 3.1-.8 1.5 0 1.9.8 3.2.8 1.3 0 2.2-1.2 3-2.4.9-1.4 1.3-2.7 1.3-2.8 0 0-2.5-1-2.5-4zM14 5.4c.7-.8 1.1-1.9 1-3-1 0-2.1.7-2.8 1.5-.6.7-1.2 1.8-1 2.9 1 .1 2.1-.6 2.8-1.4z"/></svg><span><small>Download on the</small><b>App Store</b></span></a>
+      <a class="badge play" href="https://play.google.com/store/apps/details?id=com.rzeestudios.kancil"><svg viewBox="0 0 24 24"><path fill="#00D7FE" d="M3.6 1.8 13.4 12l-9.8 10.2c-.4-.2-.6-.6-.6-1.1V2.9c0-.5.2-.9.6-1.1z"/><path fill="#FFCE00" d="m16.8 8.6 3.4 2c.9.5.9 1.8 0 2.3l-3.4 2L13.4 12z"/><path fill="#00F076" d="M3.6 1.8c.3-.2.8-.2 1.2 0l12 6.8L13.4 12z"/><path fill="#F63448" d="m13.4 12 3.4 3.4-12 6.8c-.4.2-.9.2-1.2 0z"/></svg><span><small>Get it on</small><b>Google Play</b></span></a>
+    </div>
+    <p class="note">Free to start. No ads. No account.</p>
+  </div>
+  <div class="shot">
+    <div class="frame"><img src="/assets/img/match.webp" alt="Picture matching: tap the Malay word for school"></div>
+    <img class="sticker s1" src="/assets/img/speaker.webp" alt="">
+    <img class="sticker s2" src="/assets/img/coin.webp" alt="">
+    <img class="sticker s3" src="/assets/img/mascot-happy.webp" alt="">
+  </div>
+</header>
+
+<section class="trail" id="trail">
+  <svg class="path" aria-hidden="true"><path class="base"/><path class="done"/></svg>
+  <img src="/assets/img/icon-map.webp" alt="" style="width:120px;margin:0 auto 14px">
+  <h2>Follow the trail through every unit.</h2>
+  <p class="sub">Each unit is a short walk through the hutan: learn the words, hear the story, beat the boss, open the chest.</p>
+
+  <div class="stop">
+    <div class="pic"><img src="/assets/img/match.webp" alt=""></div>
+    <div class="node"><img src="/assets/img/tree1.webp" alt=""></div>
+    <div class="txt"><h3>Learn by picture and sound<small>Belajar</small></h3><p>Every word comes with a picture and native Malay audio. English help is there when your child needs it, and quietly steps back when they don't.</p></div>
+  </div>
+  <div class="stop">
+    <div class="pic"><img src="/assets/img/story.webp" alt="" style="object-position:center 85%"></div>
+    <div class="node"><img src="/assets/img/kancil-stand.webp" alt=""></div>
+    <div class="txt"><h3>A story to step into<small>Cerita</small></h3><p>Sang Kancil needs to reach school, and the river is full of crocodiles. Each unit opens with a short scene from the folktale.</p></div>
+  </div>
+  <div class="stop">
+    <div class="pic"><img src="/assets/img/boss.webp" alt=""></div>
+    <div class="node"><img src="/assets/img/croc-snap.webp" alt=""></div>
+    <div class="txt"><h3>Battle the boss<small>Lawan Sang Ketua</small></h3><p>Complete the sentence, build the ayat, choose the right imbuhan. Every right answer is a hop across Sang Buaya's river.</p></div>
+  </div>
+  <div class="stop">
+    <div class="pic"><img src="/assets/img/treasure.webp" alt=""></div>
+    <div class="node"><img src="/assets/img/chest-open.webp" alt=""></div>
+    <div class="txt"><h3>Open the treasure<small>Harta</small></h3><p>A badge for every unit mastered, and a reason to come back tomorrow.</p></div>
+  </div>
+</section>
+
+<section class="parents" id="parents">
+  <div class="in">
+    <img src="/assets/img/icon-family.webp" alt="" style="width:96px;margin-bottom:16px">
+    <h2>Screen time, earned in Malay. On your terms.</h2>
+    <p class="lede">Kancil keeps a simple ledger between you and your child. They earn coins by learning. You decide what the coins are worth, and you grant the minutes.</p>
+    <div class="deal">
+      <div class="eq"><img src="/assets/img/chest-open.webp" alt=""><span>1 lesson<small>about 5 minutes</small></span></div>
+      <div class="eqs">=</div>
+      <div class="eq"><img src="/assets/img/coins.webp" alt=""><span>10 min<small>your rate, your call</small></span></div>
+      <p class="expl">Set the exchange rate in the parent area. Coins turn into minutes only when you approve them, behind your PIN. Kancil never locks or controls the device.</p>
+    </div>
+    <div class="pillars">
+      <div><img src="/assets/img/icon-books.webp" alt=""><h3>Built on the syllabus</h3><p>Tahap 1–3 with a short placement quiz. Mapped to the MOE Primary Malay Language Syllabus (2024), with Tahun and Darjah equivalents shown for Malaysia and Brunei. Independent, not affiliated with MOE.</p></div>
+      <div><img src="/assets/img/icon-lock.webp" alt=""><h3>Private by design</h3><p>No ads, no account, no tracking. Your child's progress is stored on your device.</p></div>
+      <div><img src="/assets/img/coins.webp" alt=""><h3>One kopi a month</h3><p>The first unit of every level is free forever. Premium unlocks the rest after a 7-day free trial, monthly or yearly.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="cta">
+  <div class="in">
+    <div>
+      <h2>Jom bijak Bahasa!</h2>
+      <p>Start with the free unit tonight. If your child asks for "one more", you'll know.</p>
+      <div class="stores">
+        <a class="badge" href="https://apps.apple.com/sg/app/id6789944706"><svg viewBox="0 0 24 24" fill="#fff"><path d="M16.4 12.6c0-2.4 2-3.6 2.1-3.6-1.1-1.7-2.9-1.9-3.5-1.9-1.5-.2-2.9.9-3.7.9-.8 0-1.9-.9-3.2-.8-1.6 0-3.1 1-4 2.4-1.7 3-.4 7.4 1.2 9.8.8 1.2 1.8 2.5 3 2.4 1.2 0 1.7-.8 3.1-.8 1.5 0 1.9.8 3.2.8 1.3 0 2.2-1.2 3-2.4.9-1.4 1.3-2.7 1.3-2.8 0 0-2.5-1-2.5-4zM14 5.4c.7-.8 1.1-1.9 1-3-1 0-2.1.7-2.8 1.5-.6.7-1.2 1.8-1 2.9 1 .1 2.1-.6 2.8-1.4z"/></svg><span><small>Download on the</small><b>App Store</b></span></a>
+        <a class="badge play" href="https://play.google.com/store/apps/details?id=com.rzeestudios.kancil"><svg viewBox="0 0 24 24"><path fill="#00D7FE" d="M3.6 1.8 13.4 12l-9.8 10.2c-.4-.2-.6-.6-.6-1.1V2.9c0-.5.2-.9.6-1.1z"/><path fill="#FFCE00" d="m16.8 8.6 3.4 2c.9.5.9 1.8 0 2.3l-3.4 2L13.4 12z"/><path fill="#00F076" d="M3.6 1.8c.3-.2.8-.2 1.2 0l12 6.8L13.4 12z"/><path fill="#F63448" d="m13.4 12 3.4 3.4-12 6.8c-.4.2-.9.2-1.2 0z"/></svg><span><small>Get it on</small><b>Google Play</b></span></a>
+      </div>
+    </div>
+    <img class="run" src="/assets/img/mascot-mari-belajar.webp" alt="Kancil running with a backpack">
+  </div>
+</section>
+<footer><div class="in"><span>© 2026 RZee Studios</span><span class="sp"></span><a href="/privacy/">Privacy</a><a href="/terms/">Terms</a><a href="/support/">Support</a><a href="mailto:razil.zul@gmail.com">Contact</a></div></footer>
+
+<script>
+  // Draw the trail through each node; the gold part follows the reader's scroll.
+  (function(){
+    var t=document.getElementById('trail'), svg=t.querySelector('.path'), base=svg.querySelector('.base'), done=svg.querySelector('.done');
+    function draw(){
+      var o=t.getBoundingClientRect(), pts=[].map.call(t.querySelectorAll('.node'),function(n){var r=n.getBoundingClientRect();return[r.left-o.left+r.width/2,r.top-o.top+r.height/2]});
+      var d='M'+pts[0][0]+' '+(pts[0][1]-160);
+      var prev=[pts[0][0],pts[0][1]-160];
+      pts.forEach(function(p,i){var my=(prev[1]+p[1])/2, sw=(window.innerWidth>860?160:30)*(i%2?-1:1);d+=' C'+(prev[0]+sw)+' '+my+' '+(p[0]-sw)+' '+my+' '+p[0]+' '+p[1];prev=p});
+      base.setAttribute('d',d);done.setAttribute('d',d);
+      var len=done.getTotalLength();done.style.strokeDasharray='1 26';done.dataset.len=len;scroll();
+    }
+    function scroll(){
+      var o=t.getBoundingClientRect(), len=+done.dataset.len, p=Math.min(1,Math.max(0,(innerHeight*.6-o.top)/o.height));
+      done.style.clipPath='inset(0 0 '+(100-p*100)+'% 0)';
+    }
+    addEventListener('resize',draw);addEventListener('scroll',scroll,{passive:true});addEventListener('load',draw);draw();
+  })();
+</script>
+<script>
+  // ?ref= attribution: remember where a visitor came from, carry it to the store links.
+  (function () {
+    try {
+      var ref = new URLSearchParams(location.search).get('ref');
+      if (ref) sessionStorage.setItem('kancil_ref', ref);
+      ref = ref || sessionStorage.getItem('kancil_ref');
+      if (ref) document.querySelectorAll('a.play').forEach(function (a) {
+        a.href += '&referrer=' + encodeURIComponent('utm_source=' + ref);
+      });
+    } catch (e) {}
+  })();
+</script>
+</body>
+</html>
