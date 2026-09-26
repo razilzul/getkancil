@@ -1,0 +1,40 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Rate Kancil</title>
+<meta name="robots" content="noindex">
+<link rel="icon" href="/assets/icon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@600;700;800&family=Lexend:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/assets/site.css">
+<script>
+  // One link for the parent outreach: phones go straight to their store's
+  // review page; everyone else picks below. No tracking, nothing stored.
+  (function () {
+    var ua = navigator.userAgent || '';
+    var ios = /iPhone|iPad|iPod/.test(ua) || (/Macintosh/.test(ua) && 'ontouchend' in document);
+    if (ios) location.replace('https://apps.apple.com/app/id6789944706?action=write-review');
+    else if (/Android/.test(ua)) location.replace('https://play.google.com/store/apps/details?id=com.rzeestudios.kancil&showAllReviews=true');
+  })();
+</script>
+</head>
+<body>
+
+<nav class="nav">
+  <a href="/"><img src="/assets/img/logo-t.webp" alt="Kancil home" class="logo"></a>
+</nav>
+
+<main class="wrap doc">
+  <h1>Rate Kancil</h1>
+  <p class="eff">Thank you! An honest review helps other parents find Kancil. Pick your store:</p>
+  <div class="stores">
+    <a class="store-btn" href="https://apps.apple.com/app/id6789944706?action=write-review"><span><small>iPhone</small>App Store</span></a>
+    <a class="store-btn" href="https://play.google.com/store/apps/details?id=com.rzeestudios.kancil&showAllReviews=true"><span><small>Android</small>Google Play</span></a>
+  </div>
+</main>
+
+</body>
+</html>

@@ -10,14 +10,14 @@ This folder is the **source of truth**. It is published to the public repo
 **`razilzul/getkancil`** → GitHub Pages, custom domain `getkancil.app` (CNAME picked up,
 build = `built`, HTTPS not yet enforced — pending DNS). Only the DNS records below remain.
 
-**Sync workflow (edits happen here, then push to the site repo):**
+**Sync workflow — `landing/` is the only place to edit the site:**
 ```bash
-# from the kancil repo root, after editing landing/*
-DST=$(mktemp -d) && cp -r landing/* landing/.nojekyll landing/CNAME "$DST"/
-cd "$DST" && git init -b main && git add -A && git commit -m "update landing"
-git remote add origin https://github.com/razilzul/getkancil.git
-git push -f origin main    # Pages rebuilds automatically
+scripts/sync-site.sh "what changed"   # PR + merge on razilzul/getkancil, no force-push
 ```
+Never edit razilzul/getkancil directly and never `git push -f` there. The old
+"git init + push -f" steps rewrote the site's history on every sync, so every
+existing clone diverged (fixed 2026-09-26). Site-only changes that land there
+anyway must be copied back into `landing/` or the next sync deletes them.
 `.nojekyll` is included so nothing is run server-side; the files are served as-is.
 After DNS resolves: getkancil repo → Settings → Pages → tick **Enforce HTTPS**.
 
