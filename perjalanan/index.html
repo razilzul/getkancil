@@ -1,0 +1,222 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>The Kancil journey: a story in every unit · Kancil</title>
+<meta name="description" content="How Kancil works, from the first tap to the last river: every unit opens with a short story, teaches the words, and ends with a Sungai Buaya boss. Three Tahap for primary-school Malay.">
+<meta property="og:title" content="The Kancil journey: a story in every unit">
+<meta property="og:description" content="Every unit opens with a story and ends with a boss. See all three Tahap, and try the first unit of each free.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://getkancil.app/perjalanan/">
+<meta property="og:image" content="https://getkancil.app/assets/og.png">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="/assets/icon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@600;700;800&family=Lexend:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+
+/* "Jejak": the app's lesson trail becomes the page. Calm, parent-facing, matches the 2026 store screenshots. */
+:root{
+  --paper:#FDF3DC; --wash:#E4EECF; --wash-2:#D3E4B6;
+  --forest:#1F4D34; --leaf:#8EC44E; --leaf-dark:#5E8F2B;
+  --gold:#F7B31B; --bark:#5E331C; --ink:#3A3A2C; --ink-soft:#6A6653;
+}
+*{box-sizing:border-box;margin:0}
+body{font-family:Lexend,system-ui,sans-serif;color:var(--ink);background:var(--paper);line-height:1.6;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+img{display:block;max-width:100%}
+a:focus-visible{outline:3px solid var(--leaf-dark);outline-offset:3px;border-radius:10px}
+h1,h2,h3{font-family:'Baloo 2',system-ui,sans-serif;font-weight:800;color:var(--forest);line-height:1}
+
+nav{display:flex;align-items:center;gap:26px;max-width:1160px;margin:0 auto;padding:18px 28px}
+nav img{height:56px}
+nav .sp{flex:1}
+nav a{color:var(--ink-soft);text-decoration:none;font-size:15px;font-weight:500}
+nav a:hover{color:var(--forest)}
+nav .get{color:#fff;background:var(--forest);font-family:'Baloo 2';font-weight:800;font-size:17px;padding:8px 20px;border-radius:999px}
+
+.hero{max-width:1160px;margin:0 auto;padding:40px 28px 40px;display:grid;grid-template-columns:1.25fr 1fr;gap:40px;align-items:center;position:relative}
+.hero:before{content:"";position:absolute;width:760px;height:760px;border-radius:50%;background:var(--wash);right:-260px;top:-80px;z-index:-1}
+.hero h1{font-size:clamp(50px,7vw,100px);letter-spacing:-.015em;line-height:.93}
+.hero p{font-size:20px;color:var(--ink-soft);max-width:26em;margin-top:24px}
+.hero p b{color:var(--forest);font-weight:600}
+.stores{display:flex;gap:12px;flex-wrap:wrap;margin-top:30px}
+.badge{display:inline-flex;align-items:center;gap:10px;background:#000;color:#fff;text-decoration:none;border-radius:12px;padding:9px 18px 9px 14px;min-width:170px}
+.badge svg{width:26px;height:26px;flex:none}
+.badge small{display:block;font-size:11px;line-height:1.1;opacity:.85}
+.badge b{display:block;font-family:-apple-system,'Segoe UI',system-ui,sans-serif;font-size:20px;line-height:1.1;font-weight:600}
+.note{font-size:14px;color:var(--ink-soft);margin-top:12px}
+.shot{position:relative;justify-self:center;width:min(380px,100%)}
+.shot .frame{border-radius:40px;overflow:hidden;box-shadow:0 30px 60px rgba(31,77,52,.22),0 0 0 10px #fff}
+.shot .sticker{position:absolute;filter:drop-shadow(0 8px 12px rgba(94,51,28,.2))}
+.shot .s1{width:120px;left:-80px;top:40%}
+.shot .s2{width:110px;right:-60px;top:6%;transform:rotate(12deg)}
+.shot .s3{width:150px;right:-70px;bottom:-30px}
+
+
+.wrap{max-width:1100px;margin:0 auto;padding:0 28px}
+.jhero{max-width:1100px;margin:0 auto;padding:30px 28px 10px;display:grid;grid-template-columns:1.2fr 1fr;gap:40px;align-items:center;position:relative}
+.jhero:before{content:"";position:absolute;width:680px;height:680px;border-radius:50%;background:var(--wash);right:-260px;top:-120px;z-index:-1}
+.jhero h1{font-size:clamp(46px,6.2vw,88px);line-height:.95}
+.jhero p{font-size:19px;color:var(--ink-soft);margin-top:20px;max-width:28em}
+.jhero p b{color:var(--forest);font-weight:600}
+.collage{display:grid;grid-template-columns:1fr 1fr;gap:12px;transform:rotate(-2deg)}
+.collage img{border-radius:20px;box-shadow:0 14px 28px rgba(31,77,52,.18),0 0 0 5px #fff;aspect-ratio:3/2;object-fit:cover;width:100%}
+.collage img:nth-child(2){transform:translateY(22px)}.collage img:nth-child(4){transform:translateY(22px)}
+h2.sec{font-size:clamp(34px,4vw,50px);text-align:center;max-width:17em;margin:0 auto}
+p.secsub{text-align:center;color:var(--ink-soft);max-width:36em;margin:14px auto 0;font-size:17px}
+.loop{margin-top:90px}
+.steps{display:grid;grid-template-columns:repeat(4,1fr);gap:26px;margin-top:44px}
+.step{text-align:center}
+.step .ph{border-radius:30px;overflow:hidden;box-shadow:0 18px 36px rgba(31,77,52,.16),0 0 0 7px #fff;aspect-ratio:9/15;background:#fff}
+.step .ph img{width:100%;height:100%;object-fit:cover;object-position:top}
+.step .n{display:inline-grid;place-items:center;width:40px;height:40px;border-radius:50%;background:var(--leaf);color:#fff;font-family:'Baloo 2';font-weight:800;font-size:20px;margin-top:22px}
+.step h3{font-size:26px;margin-top:10px}.step h3 small{display:block;font-family:Lexend;font-weight:500;font-size:14px;color:var(--leaf-dark);margin-top:6px}
+.step p{color:var(--ink-soft);font-size:15px;margin-top:8px}
+.boss{margin-top:80px;background:var(--wash);border-radius:48px;padding:50px;display:grid;grid-template-columns:1fr 1.1fr;gap:40px;align-items:center}
+.boss h3{font-size:clamp(30px,3.4vw,44px)}.boss p{color:var(--ink-soft);margin-top:14px;font-size:16.5px}
+.pools{display:flex;gap:18px;align-items:center;justify-content:center}.pools img{width:46%;filter:drop-shadow(0 10px 14px rgba(31,77,52,.2))}.pools span{font-family:'Baloo 2';font-weight:800;font-size:40px;color:var(--gold)}
+.tahaps{margin-top:100px}
+.tabs{display:flex;gap:10px;justify-content:center;margin-top:30px;flex-wrap:wrap}
+.tabs a{text-decoration:none;font-family:'Baloo 2';font-weight:800;font-size:18px;color:var(--forest);background:#fff;border-radius:999px;padding:8px 22px;box-shadow:0 4px 0 var(--wash-2)}
+.tahap{margin-top:60px;background:#fff;border-radius:40px;padding:40px;box-shadow:0 10px 0 var(--wash-2)}
+.tahap header h3{font-size:40px;margin-top:6px}.tahap header p{color:var(--ink-soft);margin-top:6px;max-width:40em}.tahap .band{color:var(--leaf-dark);font-weight:600;font-size:15px}
+.lv{display:inline-block;background:var(--forest);color:#fff;font-family:'Baloo 2';font-weight:800;border-radius:999px;padding:2px 14px;font-size:16px}.lv.sm{background:var(--gold);color:var(--bark);font-size:14px}
+.stops{display:grid;grid-template-columns:repeat(auto-fill,minmax(150px,1fr));gap:16px;margin-top:28px}
+.st{margin:0;position:relative}.st img{border-radius:18px;aspect-ratio:3/2;object-fit:cover;width:100%;box-shadow:0 0 0 4px var(--wash)}
+.st.free img{box-shadow:0 0 0 4px var(--gold)}
+.st figcaption{margin-top:8px;line-height:1.25}.st b{display:block;font-family:'Baloo 2';font-weight:800;color:var(--forest);font-size:17px}.st span{font-size:13px;color:var(--ink-soft)}
+.st em{position:absolute;top:8px;left:8px;background:var(--gold);color:var(--bark);font-style:normal;font-weight:600;font-size:12px;border-radius:999px;padding:1px 10px}
+.sample{margin-top:30px;border-top:2px dashed var(--wash-2);padding-top:24px}
+.sample-t{display:flex;gap:12px;align-items:center;flex-wrap:wrap}.sample h4{font-family:'Baloo 2';font-size:24px;color:var(--forest)}
+.say{margin-top:12px;font-size:17px}.say b{color:var(--bark);font-weight:600}.say em{display:block;color:var(--ink-soft);font-size:14.5px}.say.croc b{color:#236079}
+.w{display:inline-block;background:var(--paper);border:2px dashed var(--gold);border-radius:12px;padding:0 12px;margin:2px 4px;font-family:'Baloo 2';font-weight:800;color:var(--forest)}
+.trust{margin-top:100px;display:grid;grid-template-columns:repeat(3,1fr);gap:36px}
+.trust img{width:70px;margin-bottom:10px}.trust h3{font-size:23px}.trust p{color:var(--ink-soft);font-size:15.5px;margin-top:8px}
+.cta{margin-top:100px}
+.cta{background:var(--forest);color:#E8F0DE;padding:80px 28px;position:relative;overflow:hidden}
+.cta .in{max-width:1060px;margin:0 auto;display:grid;grid-template-columns:1fr auto;gap:40px;align-items:center}
+.cta h2{color:#fff;font-size:clamp(36px,4.5vw,58px)}
+.cta p{margin-top:14px;max-width:32em;font-size:17px;color:#C9D8C0}
+.cta .run{width:230px;transform:scaleX(-1)}
+.cta .stores .badge{box-shadow:0 0 0 1.5px #5D7D69}
+footer{background:var(--forest);border-top:1px solid #2F6247;color:#A7BCA6;padding:26px 28px;font-size:14px}
+footer .in{max-width:1060px;margin:0 auto;display:flex;gap:22px;flex-wrap:wrap;align-items:center}
+footer a{color:#fff;text-decoration:none}
+footer .sp{flex:1}
+
+
+@media (max-width:860px){
+  nav a:not(.get){display:none}
+  .jhero,.boss{grid-template-columns:1fr}.boss{padding:30px;border-radius:32px}
+  .steps{grid-template-columns:1fr 1fr}.trust{grid-template-columns:1fr}
+  .tahap{padding:26px;border-radius:28px}.cta .in{grid-template-columns:1fr}.cta .run{width:150px}
+}
+</style>
+</head>
+<body>
+<nav>
+  <a href="/"><img src="/assets/img/logo-t.webp" alt="Kancil"></a>
+  <span class="sp"></span>
+  <a href="/#trail">How it works</a>
+  <a href="/#parents">For parents</a>
+  <a href="/support/">Support</a>
+  <a class="get" href="#get">Get Kancil</a>
+</nav>
+
+<header class="jhero">
+  <div>
+    <h1>Every unit is a chapter.</h1>
+    <p>In Kancil, your child travels through <b>19 stops</b>, from the jungle school to the robot workshop. Each stop opens with a short story, teaches the words, and ends with a crocodile to outsmart. <b>Five minutes a day</b>, in Malay.</p>
+  </div>
+  <div class="collage">
+    <img src="/assets/img/journey/p4-sekolah.webp" alt="The jungle school"><img src="/assets/img/journey/p5-perayaan.webp" alt="The village festival"><img src="/assets/img/journey/p6-alam.webp" alt="The seaside"><img src="/assets/img/journey/p4-keluarga.webp" alt="Grandma's house">
+  </div>
+</header>
+
+<section class="wrap loop">
+  <h2 class="sec">How every unit plays.</h2>
+  <p class="secsub">The same four beats, so kids always know what comes next, and always want to see what's across the river.</p>
+  <div class="steps">
+    <div class="step"><div class="ph"><img src="/assets/img/journey/opener-sc1.webp" alt="Kancil arrives at Grandma's house"></div><span class="n">1</span><h3>Arrive<small>Cerita</small></h3><p>A three-panel story sets the scene: Kancil arrives somewhere new.</p></div>
+    <div class="step"><div class="ph"><img src="/assets/img/journey/opener-sc2.webp" alt="Three words to find: ibu, ayah, nenek"></div><span class="n">2</span><h3>Three words to find<small>Cari perkataan</small></h3><p>Tap to hear each one in native Malay, then spot them in the lessons.</p></div>
+    <div class="step"><div class="ph"><img src="/assets/img/journey/map.webp" alt="The trail map with lessons and the river"></div><span class="n">3</span><h3>Learn on the trail<small>Belajar</small></h3><p>Short lessons: pictures, sentences, imbuhan. Longer units have a treasure stop halfway.</p></div>
+    <div class="step"><div class="ph"><img src="/assets/img/journey/opener-sc3.webp" alt="The crocodile waits at the river"></div><span class="n">4</span><h3>Cross the river<small>Sungai Buaya</small></h3><p>Every unit ends with a boss. Right answers are hops across the crocodiles' backs.</p></div>
+  </div>
+
+  <div class="boss">
+    <div>
+      <h3>The crocodiles remember.</h3>
+      <p>Sang Ketua and his crocs are recurring rivals. The first time, your child learns Kancil's famous counting trick. After that, the crocs come back grumpier, and the chief keeps count of every time he's been fooled, out loud, in Malay.</p>
+      <p>Beat the boss and the treasure chest opens. Then the next stop unlocks.</p>
+    </div>
+    <div class="pools"><img src="/assets/img/journey/river.webp" alt="The crocodile waiting in the river"><span>→</span><img src="/assets/img/journey/river-chest.webp" alt="The treasure chest on the river bank"></div>
+  </div>
+</section>
+
+<section class="wrap tahaps" id="tahap">
+  <h2 class="sec">Three Tahap. One adventure.</h2>
+  <p class="secsub">A short placement quiz picks the right starting point. The first unit of every Tahap is free, so you can try each one.</p>
+  <div class="tabs"><a href="#p4">Tahap 1</a><a href="#p5">Tahap 2</a><a href="#p6">Tahap 3</a></div>
+  <article class="tahap" id="p4">
+<header><div><span class="lv">Tahap 1</span><h3>9 stops, 51 steps</h3><p class="band">Ages 7–10 · Primary 1–4 · Tahun 1–4</p><p>Foundations: everyday words, simple sentences, first imbuhan and first peribahasa.</p></div></header>
+<div class="stops"><figure class="st free"><img src="/assets/img/journey/p4-sekolah.webp" alt="" loading="lazy"><figcaption><b>Sekolah Rimba</b><span>Di Sekolah</span><em>Free</em></figcaption></figure><figure class="st"><img src="/assets/img/journey/p4-keluarga.webp" alt="" loading="lazy"><figcaption><b>Rumah Nenek</b><span>Keluarga Saya</span></figcaption></figure><figure class="st"><img src="/assets/img/journey/p4-makanan.webp" alt="" loading="lazy"><figcaption><b>Kedai Makan</b><span>Makanan &amp; Minuman</span></figcaption></figure><figure class="st"><img src="/assets/img/journey/p4-haiwan.webp" alt="" loading="lazy"><figcaption><b>Taman Haiwan</b><span>Haiwan Kesayangan</span></figcaption></figure><figure class="st"><img src="/assets/img/journey/p4-badan.webp" alt="" loading="lazy"><figcaption><b>Padang Senam</b><span>Badan Saya</span></figcaption></figure><figure class="st"><img src="/assets/img/journey/p4-warna-nombor.webp" alt="" loading="lazy"><figcaption><b>Pasar Warna</b><span>Warna &amp; Nombor</span></figcaption></figure><figure class="st"><img src="/assets/img/journey/p4-cuaca.webp" alt="" loading="lazy"><figcaption><b>Bukit Awan</b><span>Cuaca &amp; Langit</span></figcaption></figure><figure class="st"><img src="/assets/img/journey/p4-pengangkutan.webp" alt="" loading="lazy"><figcaption><b>Stesen Bas</b><span>Kenderaan</span></figcaption></figure><figure class="st"><img src="/assets/img/journey/p4-tempat.webp" alt="" loading="lazy"><figcaption><b>Pekan Kecil</b><span>Tempat di Sekitar</span></figcaption></figure></div>
+<div class="sample"><div class="sample-t"><span class="lv sm">Free to try</span><h4>Di Sekolah: Jungle School</h4></div>
+<p class="say"><b>Kancil:</b> “Loceng sudah berbunyi! Hari ini kita ke sekolah.”<em>The bell has rung! Today we go to school.</em></p>
+<p class="say">Words to find: <span class="w">buku</span><span class="w">pensel</span><span class="w">guru</span></p>
+<p class="say croc"><b>Sang Ketua:</b> “Sekolah? Buaya tak perlu sekolah… kami tunggu di sungai!”<em>School? Crocs don&#x27;t need school… we&#x27;ll wait at the river!</em></p></div>
+</article>
+  <article class="tahap" id="p5">
+<header><div><span class="lv">Tahap 2</span><h3>5 stops, 41 steps</h3><p class="band">Ages 9–11 · Primary 3–5 · Tahun 3–5</p><p>Building up: imbuhan apitan, kata hubung, kata ganda and peribahasa.</p></div></header>
+<div class="stops"><figure class="st free"><img src="/assets/img/journey/p5-keluarga.webp" alt="" loading="lazy"><figcaption><b>Kenduri Keluarga</b><span>Keluargaku</span><em>Free</em></figcaption></figure><figure class="st"><img src="/assets/img/journey/p5-makanan.webp" alt="" loading="lazy"><figcaption><b>Dapur Kampung</b><span>Jom Makan!</span></figcaption></figure><figure class="st"><img src="/assets/img/journey/p5-haiwan.webp" alt="" loading="lazy"><figcaption><b>Hutan Tebal</b><span>Dunia Haiwan</span></figcaption></figure><figure class="st"><img src="/assets/img/journey/p5-sukan.webp" alt="" loading="lazy"><figcaption><b>Padang Sukan</b><span>Sukan &amp; Permainan</span></figcaption></figure><figure class="st"><img src="/assets/img/journey/p5-perayaan.webp" alt="" loading="lazy"><figcaption><b>Pesta Kampung</b><span>Perayaan &amp; Komuniti</span></figcaption></figure></div>
+<div class="sample"><div class="sample-t"><span class="lv sm">Free to try</span><h4>Keluargaku: The Family Feast</h4></div>
+<p class="say"><b>Kancil:</b> “Kenduri besar hari ini! Seluruh keluarga berkumpul.”<em>A big feast today! The whole family has gathered.</em></p>
+<p class="say">Words to find: <span class="w">seekor</span><span class="w">sebuah</span><span class="w">sehelai</span></p>
+<p class="say"><b>Kancil:</b> “Selepas kenduri, kita pulang… melalui sungai buaya!”<em>After the feast, we head home… past the croc river!</em></p></div>
+</article>
+  <article class="tahap" id="p6">
+<header><div><span class="lv">Tahap 3</span><h3>5 stops, 44 steps</h3><p class="band">Ages 11–12 · Primary 5–6, PSLE band · Tahun 5–6</p><p>Exam-ready: ayat pasif, penanda wacana, kata terbitan and PSLE peribahasa.</p></div></header>
+<div class="stops"><figure class="st free"><img src="/assets/img/journey/p6-alam.webp" alt="" loading="lazy"><figcaption><b>Tepi Laut</b><span>Alam Sekitar</span><em>Free</em></figcaption></figure><figure class="st"><img src="/assets/img/journey/p6-teknologi.webp" alt="" loading="lazy"><figcaption><b>Bengkel Robot</b><span>Dunia Teknologi</span></figcaption></figure><figure class="st"><img src="/assets/img/journey/p6-kesihatan.webp" alt="" loading="lazy"><figcaption><b>Klinik Desa</b><span>Sihat &amp; Cergas</span></figcaption></figure><figure class="st"><img src="/assets/img/journey/p6-pekerjaan.webp" alt="" loading="lazy"><figcaption><b>Bandar Kerjaya</b><span>Cita-Cita &amp; Kerjaya</span></figcaption></figure><figure class="st"><img src="/assets/img/journey/p6-sains.webp" alt="" loading="lazy"><figcaption><b>Makmal Rimba</b><span>Dunia Sains</span></figcaption></figure></div>
+<div class="sample"><div class="sample-t"><span class="lv sm">Free to try</span><h4>Alam Sekitar: The Seaside</h4></div>
+<p class="say"><b>Kancil:</b> “Dengar ombak itu! Alam ini sangat indah.”<em>Listen to the waves! Nature is so beautiful.</em></p>
+<p class="say">Words to find: <span class="w">ombak</span><span class="w">pelangi</span><span class="w">gunung berapi</span></p>
+<p class="say croc"><b>Sang Ketua:</b> “Indah? Sungai kami pun indah… datanglah!”<em>Beautiful? Our river is beautiful too… come on over!</em></p></div>
+</article>
+</section>
+
+<section class="wrap trust">
+  <div><img src="/assets/img/icon-books.webp" alt=""><h3>Original stories</h3><p>Every story line and sentence is written for Kancil, not copied from textbooks, in simple Malay for young readers.</p></div>
+  <div><img src="/assets/img/icon-lock.webp" alt=""><h3>No ads, no account</h3><p>Progress stays on your device. Nothing about your child is tracked or sent anywhere.</p></div>
+  <div><img src="/assets/img/icon-family.webp" alt=""><h3>Screen time, earned</h3><p>Coins from lessons become minutes only when you approve them, behind your PIN.</p></div>
+</section>
+
+<section class="cta">
+  <div class="in">
+    <div>
+      <h2>Start the journey tonight.</h2>
+      <p>The first unit of every Tahap is free. Pay once to unlock a Tahap, with no subscription.</p>
+      <div class="stores">
+      <a class="badge" href="https://apps.apple.com/sg/app/id6789944706"><svg viewBox="0 0 24 24" fill="#fff"><path d="M16.4 12.6c0-2.4 2-3.6 2.1-3.6-1.1-1.7-2.9-1.9-3.5-1.9-1.5-.2-2.9.9-3.7.9-.8 0-1.9-.9-3.2-.8-1.6 0-3.1 1-4 2.4-1.7 3-.4 7.4 1.2 9.8.8 1.2 1.8 2.5 3 2.4 1.2 0 1.7-.8 3.1-.8 1.5 0 1.9.8 3.2.8 1.3 0 2.2-1.2 3-2.4.9-1.4 1.3-2.7 1.3-2.8 0 0-2.5-1-2.5-4zM14 5.4c.7-.8 1.1-1.9 1-3-1 0-2.1.7-2.8 1.5-.6.7-1.2 1.8-1 2.9 1 .1 2.1-.6 2.8-1.4z"/></svg><span><small>Download on the</small><b>App Store</b></span></a>
+      <a class="badge play" href="https://play.google.com/store/apps/details?id=com.rzeestudios.kancil"><svg viewBox="0 0 24 24"><path fill="#00D7FE" d="M3.6 1.8 13.4 12l-9.8 10.2c-.4-.2-.6-.6-.6-1.1V2.9c0-.5.2-.9.6-1.1z"/><path fill="#FFCE00" d="m16.8 8.6 3.4 2c.9.5.9 1.8 0 2.3l-3.4 2L13.4 12z"/><path fill="#00F076" d="M3.6 1.8c.3-.2.8-.2 1.2 0l12 6.8L13.4 12z"/><path fill="#F63448" d="m13.4 12 3.4 3.4-12 6.8c-.4.2-.9.2-1.2 0z"/></svg><span><small>Get it on</small><b>Google Play</b></span></a>
+    </div>
+    </div>
+    <img class="run" src="/assets/img/mascot-mari-belajar.webp" alt="Kancil running with a backpack">
+  </div>
+</section>
+<footer><div class="in"><span>© 2026 RZee Studios</span><span class="sp"></span><a href="/privacy/">Privacy</a><a href="/terms/">Terms</a><a href="/support/">Support</a><a href="mailto:razil.zul@gmail.com">Contact</a></div></footer>
+<script>
+  // ?ref= attribution: remember where a visitor came from, carry it to the store links.
+  (function () {
+    try {
+      var ref = new URLSearchParams(location.search).get('ref');
+      if (ref) sessionStorage.setItem('kancil_ref', ref);
+      ref = ref || sessionStorage.getItem('kancil_ref');
+      if (ref) document.querySelectorAll('a.play').forEach(function (a) {
+        a.href += '&referrer=' + encodeURIComponent('utm_source=' + ref);
+      });
+    } catch (e) {}
+  })();
+</script>
+</body>
+</html>
