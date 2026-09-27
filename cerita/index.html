@@ -61,6 +61,13 @@
   .cta b{font-size:17px;display:block}
   footer{color:var(--soft);font-weight:600;font-size:13px;padding:20px 0 40px}
   /* proofreading mode */
+  .pcom{margin:8px 0 2px;background:#F3ECFA;border:2px dashed #B79AD6;border-radius:12px;padding:8px}
+  .pcom label{display:block;font-size:12.5px;font-weight:800;color:#7B5AA0;margin-bottom:4px}
+  .pcom textarea{width:100%;min-height:52px;border:1.5px solid #E1D2F2;border-radius:10px;padding:6px 8px;font-family:inherit;font-size:14px;background:#fff}
+  .pcom.page-com{background:#FFF7E0;border-color:#F7B31B}.pcom.page-com label{color:#C98A12}
+  .pcom textarea.has{border-color:#7B5AA0;background:#FDFBFF}
+  .copyfab{display:none;position:fixed;right:12px;max-width:calc(100vw - 24px);bottom:14px;z-index:9;font-family:inherit;font-weight:800;border:0;border-radius:999px;background:#7B5AA0;color:#fff;padding:10px 16px;font-size:14px;box-shadow:0 8px 18px rgba(0,0,0,.25);cursor:pointer}
+  body.proof .copyfab{display:block}
   .semak{display:none}
   body.proof .semak{display:block}
   .review{background:#fff;border:2px solid #9262BB;border-radius:16px;padding:14px 16px;margin:16px 0}
@@ -105,6 +112,7 @@
   <button id="copy">Salin komen · Copy comments</button> <span id="msg"></span>
   <textarea id="out" readonly></textarea>
 </section>
+<button class="copyfab" id="fab">Salin komen</button>
 <footer class="wrap">Cerita asal, diilhamkan oleh cerita rakyat Sang Kancil. Original retellings inspired by the traditional Sang Kancil tales. © RZee Studios · <a href="/">Kancil</a></footer>
 <script>
 const REVIEW = "<div class=\"review\">\n  <h2>Semakan Claude · Editorial review (27 Sep 2026)</h2>\n  <p>I checked the book against the craft rules for kids' comics (ages 7–12). Legend: <span class=\"ok\">OK</span> passes, <span class=\"fix\">FIXED</span> changed in this revision, <span class=\"risk\">OPEN</span> still to do or your call.</p>\n  <ol>\n    <li><span class=\"fix\">FIXED</span> <b>A hero with a goal.</b> The intro now ends with our Kancil choosing the quest (\"Baik! Saya akan mendapatkan semuanya semula!\"). KETUA gets a voice and a dare (\"Seberangi sungai kami dahulu!\"). Before, the reader was only told pages were missing and had no one to root for.</li>\n    <li><span class=\"fix\">FIXED</span> <b>Clear who's who.</b> Young Kancil and Tok Kancil were both labelled \"TOK KANCIL\". They now have separate names. Page 1 opens with \"semasa Tok Kancil masih muda\", which explains why the legend looks like our Kancil. \"Moyang\" (great-grandfather, only three generations) became \"nenek moyang\" (ancestor), so it fits \"dahulu kala\".</li>\n    <li><span class=\"fix\">FIXED</span> <b>Cause and effect.</b> The crocs used to line up because \"the King said so\", which is a weak reason. Now Tok Kancil says the King is inviting every crocodile to a <b>kenduri</b> (feast) and needs a headcount. Greed makes them line up, and the punchline flips it: \"Sebenarnya, tiada kenduri.\"</li>\n    <li><span class=\"fix\">FIXED</span> <b>The picture matches the words.</b> Panel 2 used to show Kancil already hopping across the crocs while he was still talking them into it. A new painted panel shows the face-off on the riverbank.</li>\n    <li><span class=\"ok\">OK</span> <b>Readable panels.</b> Each panel has one action, at most 2 bubbles, and at most 15 words per bubble (the longest line is 14). Bubbles read top to bottom and left to right. Real stakes are kept (\"kami mahu makan kamu!\"), as you asked.</li>\n    <li><span class=\"ok\">OK</span> <b>Hooks and running gags.</b> Every locked page has a cliffhanger line. Page 1 ends on \"Sejak hari itu, buaya benci mengira\", which sets up every boss taunt in the game. The snail race (pp. 15–17) turns the same counting trick on Kancil.</li>\n    <li><span class=\"fix\">FIXED</span> <b>Pacing across 36 pages.</b> The cousin tales (Japan's hare and Pilandok) used to sit in the middle of the final climb. They now close Part 3 as a breather. Part 4 builds straight up: the elephant king, then the giant, Melaka, KETUA caught in a hunter's trap, and our Kancil's turn.</li>\n    <li><span class=\"fix\">FIXED</span> <b>The hero's payoff.</b> Pages 34–35 (\"KETUA dalam Bahaya\", \"Giliran Kancil\") now have our Kancil save KETUA with what Tok Kancil's stories taught him. The theme lands: stories make you wise, and your rival can become your friend.</li>\n    <li><span class=\"fix\">FIXED</span> <b>Time signposts.</b> Present-day pages (Nenek, our Kancil, KETUA) carry a <span class=\"now\">SEKARANG</span> tag, so readers always know when they've left the legend.</li>\n    <li><span class=\"fix\">FIXED</span> <b>Which king?</b> \"Raja\" alone could sound like the Raja Buaya himself, and both Malay QA passes flagged it. It is now <b>Raja Rimba</b> (King of the Jungle). That pays off in Part 3, when Tok Kancil himself becomes <i>Syah Alam di Rimba</i>.</li>\n    <li><span class=\"fix\">FIXED</span> <b>Final proofread (a fresh read before publishing).</b>\n      <ul>\n        <li>Page 1 now tells the crocs to line up <i>across</i> the river (\"Berbaris sampai ke seberang\").</li>\n        <li>The rambutans from panel 1 pay off (\"Rambutan ini untuk saya!\").</li>\n        <li>The moral \"Sejak hari itu, buaya benci mengira\" moved under the last panel, so it lands after the punchline.</li>\n        <li>In the intro, Nenek sets up the croc trick before Kancil asks about it, and KETUA is named as the one keeping the pages now.</li>\n        <li>The tiger tale is re-ordered to gong → bees → belt, the traditional order.</li>\n        <li>The page 8 and page 36 teasers no longer contradict the premise.</li>\n        <li>Traditional-tale pages say \"Tok Kancil\", so he isn't confused with young Kancil.</li>\n        <li>A present-day page (24, \"KETUA Mengintai\") keeps KETUA in the story before the trap on page 34.</li>\n      </ul></li>\n    <li><span class=\"risk\">OPEN</span> <b>Idea for later pages:</b> give Raja Buaya a different look from KETUA (older, scarred), and on page 8 reveal that KETUA is his grandson. That would explain the grudge.</li>\n    <li><span class=\"risk\">OPEN</span> <b>Only the intro and page 1 are written.</b> Pages 2–36 are outlines (title + cliffhanger). Every new page needs the same QA pass before it ships.</li>\n    <li><span class=\"risk\">OPEN</span> <b>Pre-readers (Tahap 1).</b> The youngest kids earn the first pages but can't read them yet. Voice on every line (your \"Maybe\" on Mod Tonton) would fix it. Until then a grown-up reads along.</li>\n    <li><span class=\"risk\">OPEN</span> <b>Sound words.</b> Malay onomatopoeia such as \"CEBUR!\" (splash) and \"DUM!\" would add energy. Worth adding to the action pages from page 2 on.</li>\n  </ol>\n  <p><b>Malay QA:</b> four separate reads: a full item-by-item pass, a pass on revised lines, a final story-and-language proofread, and a check of the lines it changed. All the Malay stays marked DRAF BM. No teacher approval is claimed.</p>\n</div>\n";
@@ -125,7 +133,7 @@ const partName = (n) => BOOK.parts.find((p) => p.n === n).title;
 function renderPage(p) {
   const head = p.n === 0 ? 'Pengenalan' : 'Halaman ' + p.n + ' / ' + BOOK.pages.length + ' · Bahagian ' + p.part + ': ' + partName(p.part).ms;
   let h = '<article class="page" id="h' + p.n + '"><div class="phead"><h2>' + esc(p.title.ms) + (p.now ? '<span class="now">SEKARANG</span>' : '') + '</h2><span>' + head + '</span></div>';
-  p.panels.forEach((pl) => {
+  p.panels.forEach((pl, pi) => {
     h += '<div class="pw">';
     if (pl.narr) h += '<div class="narr" onclick="this.classList.toggle(\'open\')"><span class="ms">' + markWords(pl.narr.ms, p.words) + '</span><div class="en">' + esc(pl.narr.en) + '</div></div>';
     const z = pl.focus ? ' class="z' + pl.focus[0] + '"' : pl.art === 'crocPage' ? ' class="contain"' : '';
@@ -136,8 +144,11 @@ function renderPage(p) {
     });
     h += '</div>';
     if (pl.caption) h += '<div class="narr cap" onclick="this.classList.toggle(\'open\')"><span class="ms">' + markWords(pl.caption.ms, p.words) + '</span><div class="en">' + esc(pl.caption.en) + '</div></div>';
+    // Proofreading mode: a comment box under every panel (art, words, anything).
+    h += '<div class="semak pcom"><label>Komen panel ' + (pi + 1) + ' · Your comment on panel ' + (pi + 1) + '</label><textarea data-pid="' + p.n + '.' + (pi + 1) + '" placeholder="Gambar, ayat, lawak, apa sahaja… · The picture, the words, the joke, anything"></textarea></div>';
     h += '</div>';
   });
+  h += '<div class="semak pcom page-com"><label>Komen untuk seluruh halaman · Your comment on the whole page</label><textarea data-pid="' + p.n + '.all" placeholder="Jalan cerita, rentak, pengakhiran… · Story, pacing, ending"></textarea></div>';
   return h + '<p class="hint">Ketuk gelembung untuk melihat bahasa Inggeris · Tap a bubble for English</p></article>';
 }
 const written = [BOOK.intro, ...BOOK.pages.filter((p) => p.panels)];
@@ -183,12 +194,29 @@ if (proof) {
   h += '</table>';
   rv.innerHTML = h;
   rv.querySelectorAll('textarea').forEach((t) => t.oninput = () => { notes[t.dataset.id] = t.value; save(); });
+  // Panel and page comment boxes live under the comic itself.
+  const summary = (pid) => {
+    const [pn, pan] = pid.split('.');
+    const pg = written.find((x) => String(x.n) === pn);
+    if (pan === 'all') return (pg.n === 0 ? 'Pengenalan' : 'Halaman ' + pg.n) + ' (seluruh halaman · whole page)';
+    const pl = pg.panels[Number(pan) - 1];
+    const first = pl.bubbles[0] ? pl.bubbles[0].ms : pl.narr ? pl.narr.ms : '';
+    return (pg.n === 0 ? 'Pengenalan' : 'Halaman ' + pg.n) + ', panel ' + pan + ' [' + pl.art + '] "' + first.slice(0, 60) + (first.length > 60 ? '…' : '') + '"';
+  };
+  document.querySelectorAll('textarea[data-pid]').forEach((t) => {
+    const k = 'P' + t.dataset.pid;
+    t.value = notes[k] || '';
+    t.classList.toggle('has', !!t.value.trim());
+    t.oninput = () => { notes[k] = t.value; t.classList.toggle('has', !!t.value.trim()); save(); };
+  });
   function exp() {
     const out = ['## Buku Cerita proofread notes'];
+    document.querySelectorAll('textarea[data-pid]').forEach((t) => { const v = (notes['P' + t.dataset.pid] || '').trim(); if (v) out.push('- ' + summary(t.dataset.pid) + ' → ' + v.replace(/\n+/g, ' / ')); });
     rows.forEach((r) => { const v = (notes[r.id] || '').trim(); if (v) out.push('- ' + r.id + ' (' + r.where + ') "' + r.ms + '" → ' + v.replace(/\n+/g, ' / ')); });
     document.getElementById('out').value = out.length > 1 ? out.join('\n') : 'No notes yet.';
   }
   exp();
+  document.getElementById('fab').onclick = () => document.getElementById('copy').click();
   document.getElementById('copy').onclick = async () => {
     const o = document.getElementById('out'), m = document.getElementById('msg');
     try { await navigator.clipboard.writeText(o.value); m.textContent = 'Copied.'; } catch (e) { o.select(); try { document.execCommand('copy'); m.textContent = 'Copied.'; } catch (_) { m.textContent = 'Select the text and copy it.'; } }
