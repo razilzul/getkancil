@@ -53,6 +53,18 @@ nav .get{color:#fff;background:var(--forest);font-family:'Baloo 2';font-weight:8
 .shot{position:relative;justify-self:center;width:min(380px,100%)}
 .shot .frame{border-radius:40px;overflow:hidden;box-shadow:0 30px 60px rgba(31,77,52,.22),0 0 0 10px #fff}
 .shot .sticker{position:absolute;filter:drop-shadow(0 8px 12px rgba(94,51,28,.2))}
+.shot .frame{position:relative}
+.shot .frame video{display:block;width:100%;aspect-ratio:441/900;object-fit:cover;background:#E7F4D4}
+.shot .play{position:absolute;inset:0;border:0;padding:0;background:transparent;cursor:pointer;transition:opacity .25s}
+.shot .play span{position:absolute;left:50%;top:calc(50% - 22px);width:96px;height:96px;margin:-48px 0 0 -48px;border-radius:50%;background:var(--gold);box-shadow:0 8px 0 #D8930A,0 18px 40px rgba(0,0,0,.35);display:grid;place-items:center;animation:kv-pulse 1.8s ease-in-out infinite}
+.shot .play span:before{content:"";position:absolute;inset:0;border-radius:50%;border:4px solid var(--gold);animation:kv-ring 1.8s ease-out infinite}
+.shot .play:hover span{animation-play-state:paused;transform:scale(1.08)}
+@keyframes kv-pulse{0%,100%{transform:scale(1)}50%{transform:scale(1.08)}}
+@keyframes kv-ring{0%{transform:scale(1);opacity:.9}100%{transform:scale(1.7);opacity:0}}
+@media (prefers-reduced-motion:reduce){.shot .play span,.shot .play span:before{animation:none}}
+.shot .play span:after{content:"";margin-left:7px;border-style:solid;border-width:19px 0 19px 31px;border-color:transparent transparent transparent var(--forest)}
+.shot .play small{position:absolute;left:50%;top:calc(50% + 46px);transform:translateX(-50%);white-space:nowrap;font-family:'Baloo 2';font-weight:800;font-size:17px;line-height:1;color:#fff;background:var(--forest);padding:8px 14px;border-radius:999px;box-shadow:0 4px 0 rgba(0,0,0,.18)}
+.shot.playing .play{opacity:0;pointer-events:none}
 .shot .s1{width:120px;left:-80px;top:40%}
 .shot .s2{width:110px;right:-60px;top:6%;transform:rotate(12deg)}
 .shot .s3{width:150px;right:-70px;bottom:-30px}
@@ -174,12 +186,25 @@ footer .sp{flex:1}
     <p class="note">Free to start. No ads. No account.</p>
   </div>
   <div class="shot">
-    <div class="frame"><img src="/assets/img/hero-2026-10.webp" alt="The Kancil home screen: the Tahap 1 trail, starting with the unit Haiwan Comel"></div>
+    <div class="frame">
+      <video id="hero-vid" src="/assets/video/kancil-hero.mp4" poster="/assets/video/kancil-hero.webp" preload="none" playsinline aria-label="Kancil in 60 seconds: the jungle map, a Malay quiz, the crocodile river boss, the treasure chest, a comic page and earned screen time"></video>
+      <button type="button" class="play" id="hero-play" aria-label="Play the 60-second Kancil video, with sound"><span></span><small>Watch · 60 seconds</small></button>
+    </div>
     <img class="sticker s1" src="/assets/img/speaker.webp" alt="">
     <img class="sticker s2" src="/assets/img/coin.webp" alt="">
     <img class="sticker s3" src="/assets/img/mascot-happy.webp" alt="">
   </div>
 </header>
+
+<script>
+  (function () {
+    var v = document.getElementById('hero-vid'), b = document.getElementById('hero-play'), shot = v && v.closest('.shot');
+    if (!v || !b) return;
+    b.addEventListener('click', function () { v.controls = true; v.play(); });
+    v.addEventListener('play', function () { shot.classList.add('playing'); });
+    v.addEventListener('ended', function () { v.controls = false; v.load(); shot.classList.remove('playing'); });
+  })();
+</script>
 
 <section class="trail" id="trail">
   <svg class="path" aria-hidden="true"><path class="base"/><path class="done"/></svg>
