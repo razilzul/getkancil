@@ -1,6 +1,17 @@
 [
  {
   "date": "2026-10-03",
+  "added": 0,
+  "changed": 2,
+  "removed": 0,
+  "lessons": [
+   "p5-perayaan-08",
+   "p6-kesihatan-03"
+  ],
+  "note": "Renamed a character in two sentences (Tahap 3 tanda mata, Tahap 4 termuda); fixed the termuda sentence"
+ },
+ {
+  "date": "2026-10-03",
   "added": 8,
   "changed": 124,
   "removed": 0,
