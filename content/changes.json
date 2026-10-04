@@ -1,5 +1,19 @@
 [
  {
+  "date": "2026-10-04",
+  "added": 55,
+  "changed": 0,
+  "removed": 0,
+  "lessons": [
+   "p5-keluarga-07",
+   "p5-makanan-10",
+   "p5-haiwan-10",
+   "p5-sukan-10",
+   "p5-perayaan-09"
+  ],
+  "note": "Tahap 3: a new Peribahasa dalam Ayat lesson in every unit (40 questions)"
+ },
+ {
   "date": "2026-10-03",
   "added": 0,
   "changed": 2,
