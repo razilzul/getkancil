@@ -2,6 +2,23 @@
  {
   "date": "2026-10-09",
   "added": 0,
+  "changed": 8,
+  "removed": 0,
+  "lessons": [
+   "p1-sekolah-04",
+   "p1-badan-04",
+   "p1-pakaian-04",
+   "p1-mainan-04",
+   "p5-keluarga-04",
+   "p5-makanan-08",
+   "p5-haiwan-02",
+   "p5-sukan-07"
+  ],
+  "note": "Bahasa baku dalam pelajaran: 'guna' kepada 'menggunakan', 'Jom main' kepada 'Mari bermain'"
+ },
+ {
+  "date": "2026-10-09",
+  "added": 0,
   "changed": 5,
   "removed": 0,
   "lessons": [
