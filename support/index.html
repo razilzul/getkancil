@@ -7,75 +7,77 @@
 <meta name="description" content="Help with Kancil: prices, which Tahap fits your child, restoring purchases, sibling profiles, reminders, a forgotten parent PIN, and what's free.">
 <link rel="canonical" href="https://getkancil.app/support/">
 <link rel="icon" href="/assets/icon.png">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@600;700;800&family=Lexend:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="preload" href="/assets/fonts/baloo-2-latin-800-normal.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="/assets/tokens.css">
 <link rel="stylesheet" href="/assets/site.css">
+<script src="/assets/site.js" defer></script>
 </head>
 <body>
 
-<nav class="nav">
-  <a href="/"><img src="/assets/img/logo-t.webp" alt="Kancil home" class="logo"></a>
-  <span class="spacer"></span>
-  <a class="link" href="/privacy/">Privacy</a>
-  <a class="link" href="/terms/">Terms</a>
+<nav>
+  <a class="lockup" href="/" aria-label="Kancil home"><img class="still" src="/assets/img/logo-t.webp" alt=""></a>
+  <span class="sp"></span>
+  <a href="/#trail">How it works</a><a href="/#worlds">Tahap</a><a href="/support/">Support</a>
+  <a class="lang" href="/ms/" lang="ms" hreflang="ms"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3c3 3.2 3 14.8 0 18M12 3c-3 3.2-3 14.8 0 18"/></svg><span class="full">Bahasa Melayu</span><span class="short">BM</span></a>
+  <a class="chunky" href="/#get"><i></i><span>Get Kancil</span></a>
 </nav>
 
-<main class="wrap doc">
+<main class="doc">
   <h1>Support</h1>
   <p class="eff">Questions or trouble? Email <a href="mailto:razil.zul@gmail.com">razil.zul@gmail.com</a> and we'll help.</p>
 
+  <div class="chips" role="navigation" aria-label="Topics"><a href="#price">Prices</a><a href="#tahap">Which Tahap</a><a href="#restore">Restore</a><a href="#pin">PIN</a><a href="#siblings">Brothers and sisters</a><a href="#reminder">Reminders</a><a href="#stats">Privacy</a></div>
   <div class="short">
     <strong>Kancil keeps everything on your device.</strong> There are no accounts to log into, so most fixes happen right inside the app. Tap the <em>Ibu Bapa</em> door at the top of the map (it is also on Profil) and enter your PIN. Everything for grown-ups is on one page, <em>Untuk Ibu Bapa</em>: screen time, progress, children, language and reminders, and <em>Purchases, PIN &amp; help</em>.
   </div>
 
   <div class="faq">
-    <details open>
-      <summary>What's free, and what does it cost?</summary>
+    <details id="price" open>
+      <summary><span>What's free, and what does it cost?</span></summary>
       <p>Kancil has four levels (Tahap). The first unit of every Tahap is free to play and replay forever. After that, you unlock a Tahap with a single one-time payment, with no subscription and nothing that renews. Each Tahap is S$6.98 at the launch price until 31 December 2026, then S$14.98. The app shows prices in your local currency before you confirm.</p>
     </details>
-    <details>
-      <summary>Which Tahap fits my child?</summary>
+    <details id="tahap">
+      <summary><span>Which Tahap fits my child?</span></summary>
       <p>Tahap 1 is Primary 1–2 (listen-first, no reading needed). Tahap 2 is Primary 3–4, Tahap 3 is Primary 5, and Tahap 4 is Primary 6 and PSLE. The app also shows the Tahun and Darjah equivalents for Malaysia and Brunei. If a level feels too easy or too hard, your child can say so from the Tahap chip on the map, and you can move them any time in <em>Untuk Ibu Bapa</em> → <em>Change Tahap</em>.</p>
     </details>
-    <details>
-      <summary>Why did my child's Tahap number change?</summary>
+    <details id="renumber">
+      <summary><span>Why did my child's Tahap number change?</span></summary>
       <p>We added a new Tahap 1 for Primary 1–2, so the older levels moved up one number: the old Tahap 1, 2 and 3 are now Tahap 2, 3 and 4. The lessons inside them haven't changed, and nothing is lost: progress, stars, coins, screen-time settings and purchases all carry over.</p>
     </details>
-    <details>
-      <summary>I was subscribed before. What happens now?</summary>
+    <details id="subscribed">
+      <summary><span>I was subscribed before. What happens now?</span></summary>
       <p>Thank you for backing Kancil early! Families who subscribed before we switched to one-time purchases keep every level, permanently, at no extra cost. Your old subscription keeps renewing until you cancel it — on iPhone, Settings → your name → Subscriptions; on Android, Play Store → profile → Payments &amp; subscriptions → Subscriptions. Cancelling does not remove your access. If you later move to a new phone and access doesn't come back, email us and we'll send a free unlock code.</p>
     </details>
-    <details>
-      <summary>I already paid — how do I restore my purchase on a new device?</summary>
+    <details id="restore">
+      <summary><span>I already paid — how do I restore my purchase on a new device?</span></summary>
       <p>In Kancil, open <em>Untuk Ibu Bapa</em> → <em>Purchases, PIN &amp; help</em> → "Restore purchases" (the shop has a Restore button too). Make sure you're signed in to the Google or Apple account that bought or redeemed the level. On iPhone, eligible purchases can also restore through Family Sharing when purchase sharing is enabled.</p>
     </details>
-    <details>
-      <summary>I forgot the parent PIN. What now?</summary>
+    <details id="pin">
+      <summary><span>I forgot the parent PIN. What now?</span></summary>
       <p>On the PIN screen, tap "Forgot PIN?". Kancil asks you to multiply two 2-digit numbers (a grown-up can use a calculator). Get it right and you choose a new 4-digit PIN. Your child's progress, coins and purchases stay as they are. We can't look up or reset the PIN for you: the PIN never leaves the phone.</p>
     </details>
-    <details>
-      <summary>How do I reset progress or start over?</summary>
+    <details id="reset">
+      <summary><span>How do I reset progress or start over?</span></summary>
       <p>Open <em>Untuk Ibu Bapa</em> → <em>Purchases, PIN &amp; help</em>, and under <em>Start over</em> tap "Reset Kancil". It erases every child's progress, coins and history on this phone, and asks you to confirm first. This can't be undone. Your purchases are kept, and "Restore purchases" brings them back on any phone. Deleting the app also erases all progress. To remove just one child, use <em>Children</em> in <em>Untuk Ibu Bapa</em> instead.</p>
     </details>
-    <details>
-      <summary>Can brothers and sisters each have their own profile?</summary>
+    <details id="siblings">
+      <summary><span>Can brothers and sisters each have their own profile?</span></summary>
       <p>Yes. In <em>Untuk Ibu Bapa</em> → <em>Children</em>, tap "Add a child". Each child gets their own name, forest friend, coins, streak and progress. The parent PIN and any purchases are shared, so you only pay once for the family's phone.</p>
     </details>
-    <details>
-      <summary>How does the daily reminder work?</summary>
+    <details id="reminder">
+      <summary><span>How does the daily reminder work?</span></summary>
       <p>Kancil can nudge your child at a time you pick (between 4 pm and 8 pm) on days they haven't played yet. After a few missed days it reminds every other day, and it stops after two weeks without play. Reminders are scheduled on the phone itself: there is no push server and nothing is sent to us. Switch it off or change the time in <em>Untuk Ibu Bapa</em> → <em>Language &amp; reminders</em>.</p>
     </details>
-    <details>
-      <summary>Can I use the parent screens in Bahasa Melayu?</summary>
+    <details id="language">
+      <summary><span>Can I use the parent screens in Bahasa Melayu?</span></summary>
       <p>Yes. The grown-up screens (the PIN, <em>Untuk Ibu Bapa</em> and the shop) can be shown in English or Bahasa Melayu. Change it in <em>Untuk Ibu Bapa</em> → <em>Language &amp; reminders</em>. Your child's lessons don't change.</p>
     </details>
-    <details>
-      <summary>What is Buku Cerita?</summary>
+    <details id="buku-cerita">
+      <summary><span>What is Buku Cerita?</span></summary>
       <p>Buku Cerita is <em>Hikayat Sang Kancil</em>, a comic of the classic Sang Kancil tales starring the Kancil your child plays, told in Malay with English help. Each boss your child beats, and the halfway point of the longer units, unlocks the next page. The book is read inside the app.</p>
     </details>
-    <details>
-      <summary>How do I switch off the anonymous usage stats?</summary>
+    <details id="stats">
+      <summary><span>How do I switch off the anonymous usage stats?</span></summary>
       <p><em>Untuk Ibu Bapa</em> → <em>Purchases, PIN &amp; help</em> → "Share anonymous usage stats". When it's off, nothing is sent from that phone. The stats never include your child's name, forest friend, PIN or anything typed. Our <a href="/privacy/">Privacy Policy</a> lists exactly what is sent.</p>
     </details>
   </div>
@@ -84,14 +86,6 @@
   <p>Email <a href="mailto:razil.zul@gmail.com">razil.zul@gmail.com</a> with your device (iPhone or Android) and a short description. We read every message.</p>
 </main>
 
-<footer>
-  <div>
-    <a href="/privacy/">Privacy</a>
-    <a href="/terms/">Terms</a>
-    <a href="/support/">Support</a>
-    <a href="mailto:razil.zul@gmail.com">Contact</a>
-  </div>
-  <p class="fine">© 2026 Rzee Studios · No ads · No ad tracking · Progress stays on the device</p>
-</footer>
+<footer><div class="in"><span>© 2026 Rzee Studios</span><span class="sp"></span><a href="/privacy/">Privacy</a><a href="/terms/">Terms</a><a href="/support/">Support</a><a href="mailto:razil.zul@gmail.com">Contact</a><p class="fine">No ads · No ad tracking · Progress stays on the device</p></div></footer>
 </body>
 </html>
