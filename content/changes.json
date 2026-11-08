@@ -2,6 +2,32 @@
  {
   "date": "2026-11-08",
   "added": 0,
+  "changed": 43,
+  "removed": 0,
+  "lessons": [
+   "p5-keluarga-08",
+   "p5-keluarga-03",
+   "p5-keluarga-07",
+   "p5-keluarga-06",
+   "p5-makanan-03",
+   "p5-makanan-07",
+   "p5-makanan-10",
+   "p5-makanan-09",
+   "p5-haiwan-03",
+   "p5-haiwan-06",
+   "p5-sukan-02",
+   "p5-sukan-10",
+   "p5-sukan-06",
+   "p5-sukan-08",
+   "p5-perayaan-02",
+   "p5-perayaan-04",
+   "p5-perayaan-06"
+  ],
+  "note": "Review pass on the P5 Kenapa lines: 52 lines tightened, 4 answer choices replaced that could also be right, 1 Belajar card wording"
+ },
+ {
+  "date": "2026-11-08",
+  "added": 0,
   "changed": 230,
   "removed": 0,
   "lessons": [
