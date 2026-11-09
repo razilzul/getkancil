@@ -1,5 +1,29 @@
 [
  {
+  "date": "2026-11-09",
+  "added": 0,
+  "changed": 19,
+  "removed": 0,
+  "lessons": [
+   "p4-makanan-06",
+   "p5-keluarga-03",
+   "p5-keluarga-07",
+   "p5-makanan-03",
+   "p5-makanan-06",
+   "p5-sukan-04",
+   "p5-perayaan-02",
+   "p5-perayaan-04",
+   "p5-perayaan-09",
+   "p5-perayaan-06",
+   "p6-alam-04",
+   "p6-alam-07",
+   "p6-pekerjaan-02",
+   "p6-pekerjaan-04",
+   "p6-pekerjaan-06"
+  ],
+  "note": "Item fixes (#314): 16 answer choices swapped where another option also fitted; dihidangkan, 'Adik bercita-cita menjadi', Sampah-sarap, 'banyak ilmunya', 'Ibu sedang menggoreng'"
+ },
+ {
   "date": "2026-11-08",
   "added": 0,
   "changed": 208,
