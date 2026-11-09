@@ -2,6 +2,17 @@
  {
   "date": "2026-11-09",
   "added": 0,
+  "changed": 2,
+  "removed": 0,
+  "lessons": [
+   "p4-keluarga-03",
+   "p6-alam-02"
+  ],
+  "note": "P4 me- card shows examples only; P6 per-...-an card now teaches the words as vocabulary (#314)"
+ },
+ {
+  "date": "2026-11-09",
+  "added": 0,
   "changed": 19,
   "removed": 0,
   "lessons": [
