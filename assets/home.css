@@ -212,3 +212,14 @@
 }
 @media (prefers-reduced-motion:reduce){.path .done{display:none}}
 .cuba .ins span.ms{color:var(--ink-soft)}
+
+/* "As heard on Warna 94.2" */
+.heard{margin:90px auto 0;padding:0 28px}
+.heard .in{max-width:760px;margin:0 auto;background:#1F4D34;color:#fff;border:2px solid #F7B31B;border-radius:36px;box-shadow:0 6px 0 #133524;padding:40px 36px;text-align:center}
+.heard .wv{width:96px;height:48px;display:block;margin:0 auto 14px}
+.heard small{display:block;font:800 13px/1 Arial,sans-serif;letter-spacing:.16em;color:#F7B31B;text-transform:uppercase}
+.heard h2{color:#fff;font-size:clamp(40px,6vw,64px);margin-top:12px}
+.heard p{color:#D7E6CC;font-size:18px;line-height:1.5;max-width:30em;margin:16px auto 0}
+.heard p b{color:#fff}
+.heard audio{margin-top:22px;width:100%;max-width:420px}
+@media(max-width:700px){.heard .in{padding:30px 22px;border-radius:28px}}
